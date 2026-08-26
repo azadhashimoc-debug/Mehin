@@ -65,7 +65,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Sağ Tərəf: Real Portret / Editorial Monoqram Kompozisiyası (~55%) */}
+          {/* Sağ Tərəf: Real Portret (~55%) */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end anim-monogram-entrance">
             <div className="relative w-full max-w-lg lg:max-w-none group">
               {/* Arxa Fonda Çox İncə #B59668 Ambient Glow */}
@@ -79,6 +79,7 @@ export default function HeroSection() {
                     alt={`${hero.imageCaption.name} — ${hero.imageCaption.role}`}
                     fill
                     priority
+                    unoptimized
                     className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
                     onError={() => setImageError(true)}
                   />
@@ -91,7 +92,6 @@ export default function HeroSection() {
                     </div>
 
                     <div className="text-center my-auto flex flex-col items-center">
-                      {/* Zərif Qızılı Dairə & Monoqram */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-champagne/40 p-1 flex items-center justify-center mb-6 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]">
                         <div className="w-full h-full rounded-full border border-champagne/30 bg-ivory flex items-center justify-center transition-colors duration-400 group-hover:border-champagne/60">
                           <span className="text-champagne-dark font-serif text-3xl sm:text-4xl italic">

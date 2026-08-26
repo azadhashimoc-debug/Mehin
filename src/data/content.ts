@@ -2,9 +2,9 @@ import { SiteContent } from "@/types";
 
 export const siteContent: SiteContent = {
   meta: {
-    title: "Mehin İsmayılova — Diksiya və Nitq Müəlliməsi",
+    title: "Mehin İsmayılova — Diksiya və Nitq Mütəxəssisi",
     description: "Diksiya, düzgün tələffüz, nitq və ictimai çıxış üzrə fərdi dərslər.",
-    ogTitle: "Mehin İsmayılova — Diksiya və Nitq Müəlliməsi",
+    ogTitle: "Mehin İsmayılova — Diksiya və Nitq Mütəxəssisi",
     ogDescription: "Diksiya, düzgün tələffüz, nitq və ictimai çıxış üzrə fərdi dərslər.",
     siteUrl: "https://mehinismayilova.az",
   },
@@ -26,7 +26,7 @@ export const siteContent: SiteContent = {
     secondaryLink: "Haqqımda",
     imageCaption: {
       name: "Mehin İsmayılova",
-      role: "Diksiya & Nitq Müəlliməsi",
+      role: "Diksiya & Nitq Mütəxəssisi",
     },
     stats: [
       {
@@ -101,11 +101,11 @@ export const siteContent: SiteContent = {
       "Davamlı inkişaf",
     ],
     ctaText: "Haqqımda daha çox",
-    imageAlt: "Mehin İsmayılova — Diksiya və Nitq Müəlliməsi",
+    imageAlt: "Mehin İsmayılova — Diksiya və Nitq Mütəxəssisi",
   },
   aboutPage: {
     hero: {
-      eyebrow: "MÜƏLLİMƏ HAQQINDA",
+      eyebrow: "MÜTƏXƏSSİS HAQQINDA",
       heading: "Haqqımda",
       subtitle: "Daha aydın danışmaq, daha inamlı ifadə olunmaq.",
     },
@@ -113,7 +113,7 @@ export const siteContent: SiteContent = {
       eyebrow: "MƏNİM YANAŞMAM",
       heading: "Səs — insanın daxili gücünün ifadəsidir.",
       paragraphs: [
-        "Mən Mehin İsmayılova, diksiya və nitq müəlliməsiyəm. Tələbələrimə öz səslərini kəşf etməkdə və fikirlərini təbii inamla çatdırmaqda fərdi yanaşma ilə bələdçilik edirəm.",
+        "Mən Mehin İsmayılova, diksiya və nitq mütəxəssisiyəm. Tələbələrimə öz səslərini kəşf etməkdə və fikirlərini təbii inamla çatdırmaqda fərdi yanaşma ilə bələdçilik edirəm.",
         "Diksiya və nitq təlimi sadəcə sözlərin mexaniki tələffüzü deyil — insanın özünü rahat ifadə etməsi, səsinin təbii tembrini tapması və fikirlərini aydın şəkildə çatdırmasıdır.",
       ],
       quote: "Hər bir səs fərdi bir kimlikdir. Düzgün ifadə olunan səs insanın ən güclü vizit kartıdır.",
@@ -269,7 +269,7 @@ export const siteContent: SiteContent = {
         {
           id: "faq-4",
           question: "Dərslər kimlər üçün uyğundur?",
-          answer: "Danışığında aydınlıq, səlislik və təbii inam qazanmaq istəyən hər kəs — rəhbərlər, aparıcılar, müəllimlər, mütəxəssislər və ictimai çıxış edən şəxslər üçün uyğundur.",
+          answer: "Danışığında aydınlıq, səlislik və təbii inam qazanmaq istəyən hər kəs — rəhbərlər, aparıcılar, təlimçilər, mütəxəssislər və ictimai çıxış edən şəxslər üçün uyğundur.",
         },
       ],
     },

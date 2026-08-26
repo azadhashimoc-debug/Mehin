@@ -47,6 +47,7 @@ export default function AboutPage() {
                   alt={aboutPreview.imageAlt}
                   fill
                   priority
+                  unoptimized
                   className="object-cover object-center"
                 />
               </div>
@@ -58,7 +59,7 @@ export default function AboutPage() {
                   Mehin İsmayılova
                 </p>
                 <p className="text-xs text-taupe mt-1 font-light">
-                  Diksiya &amp; Nitq Müəlliməsi
+                  Diksiya &amp; Nitq Mütəxəssisi
                 </p>
               </div>
             </ScrollReveal>

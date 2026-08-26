@@ -17,7 +17,7 @@ export default function Footer() {
                 Mehin İsmayılova
               </span>
               <span className="text-xs tracking-widest uppercase text-taupe font-normal mt-1 block">
-                Diksiya & Nitq Müəlliməsi
+                Diksiya &amp; Nitq Mütəxəssisi
               </span>
               <p className="mt-4 text-taupe text-sm leading-relaxed max-w-sm font-light">
                 Düzgün tələffüz, aydın səs və özünəinamlı ictimai çıxış üzrə fərdi və peşəkar təlimlər.
@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Contact & Social Links */}
           <div className="md:col-span-4">
             <span className="text-[11px] tracking-widest uppercase text-champagne-dark font-medium block mb-4">
-              Əlaqə & Sosial
+              Əlaqə &amp; Sosial
             </span>
             <ul className="space-y-2.5 text-sm text-taupe">
               <li>

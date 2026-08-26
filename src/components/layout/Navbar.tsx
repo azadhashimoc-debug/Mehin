@@ -45,7 +45,7 @@ export default function Navbar() {
               Mehin İsmayılova
             </span>
             <span className="text-[10px] tracking-widest uppercase text-taupe font-normal -mt-0.5">
-              Diksiya &amp; Nitq Müəlliməsi
+              Diksiya &amp; Nitq Mütəxəssisi
             </span>
           </Link>
 

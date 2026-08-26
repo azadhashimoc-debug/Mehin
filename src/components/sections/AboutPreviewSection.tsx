@@ -14,9 +14,9 @@ export default function AboutPreviewSection() {
   return (
     <section className="py-24 sm:py-32 lg:py-40 bg-ivory-secondary/30 border-t border-charcoal/10 overflow-hidden">
       <Container>
-        {/* Desktop: Asymmetric 40/60 Layout with ScrollReveal */}
+        {/* Desktop: Asymmetric 40/60 Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Sol Tərəf: Real Foto / Monoqram Kompozisiyası (~40%) */}
+          {/* Sol Tərəf: Real Foto (~40%) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start">
             <ScrollReveal delay={0} className="w-full max-w-md lg:max-w-none">
               <div className="relative w-full group">
@@ -30,6 +30,7 @@ export default function AboutPreviewSection() {
                       src="/images/mehin-about.jpg"
                       alt={aboutPreview.imageAlt}
                       fill
+                      unoptimized
                       className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
                       onError={() => setImageError(true)}
                     />
@@ -37,7 +38,7 @@ export default function AboutPreviewSection() {
                     /* Premium Editorial Monoqram Tərtibatı */
                     <div className="w-full h-full flex flex-col items-center justify-between p-8 sm:p-10 bg-ivory-secondary text-charcoal relative">
                       <div className="w-full flex justify-between items-center text-[10px] tracking-widest uppercase text-taupe font-medium">
-                        <span>MÜƏLLİMƏ</span>
+                        <span>MÜTƏXƏSSİS</span>
                         <span className="text-champagne-dark">FƏLSƏFƏ</span>
                       </div>
 
