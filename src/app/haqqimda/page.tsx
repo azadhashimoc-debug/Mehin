@@ -38,12 +38,12 @@ export default function AboutPage() {
 
         {/* 2. Mənim Yanaşmam: Portrait + Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-20 sm:pb-28 border-b border-charcoal/10 items-start">
-          {/* Sol: Portret */}
+          {/* Sol: Tədris / Mühazirə Portreti */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={0}>
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[4px] bg-ivory-secondary border border-charcoal/10 shadow-[0_12px_28px_rgba(23,22,20,0.03)] mb-6">
                 <Image
-                  src="/images/mehin-about.jpg"
+                  src="/images/mehin-teaching.jpg"
                   alt={aboutPreview.imageAlt}
                   fill
                   priority
@@ -119,6 +119,53 @@ export default function AboutPage() {
                 </div>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+
+        {/* 3. Real Seminar & Təlim Fəaliyyəti (Social Proof Showcase) */}
+        <div className="py-20 sm:py-28 border-b border-charcoal/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-6">
+              <ScrollReveal>
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[4px] bg-ivory-secondary border border-charcoal/10 shadow-[0_10px_25px_rgba(23,22,20,0.03)]">
+                  <Image
+                    src="/images/mehin-seminar.jpg"
+                    alt="Mehin İsmayılova seminar və təşəkkürnamə təqdimatı"
+                    fill
+                    unoptimized
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent text-ivory">
+                    <span className="text-xs font-serif tracking-wide block">
+                      Seminar &amp; Təlimçi Fəaliyyəti
+                    </span>
+                    <span className="text-[10px] tracking-widest uppercase text-champagne-light block">
+                      Tələbələrlə praktiki seminar anı
+                    </span>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            <div className="lg:col-span-6">
+              <ScrollReveal delay={100}>
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="w-6 h-[1px] bg-champagne" />
+                  <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium">
+                    TƏCRÜBƏ VƏ TƏLİMLƏR
+                  </span>
+                </div>
+                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal mb-4">
+                  Praktiki təlimlər və seminar çıxışları
+                </h2>
+                <p className="text-taupe text-sm sm:text-base font-light leading-relaxed mb-6">
+                  Akademik və ictimai platformalarda, o cümlədən Mükəmməllik Mərkəzinin “Səlis Nitq” və natiqlik klublarında fəal seminar və ustad dərsləri keçirərək yüzlərlə dinləyicinin özünəinamını artırmağa dəstək olmuşdur.
+                </p>
+                <div className="inline-flex items-center space-x-2 text-xs text-charcoal font-medium border-l-2 border-champagne pl-4">
+                  <span>Fərdi dərslər, qrup seminarları və korporativ təlimlər</span>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
 
