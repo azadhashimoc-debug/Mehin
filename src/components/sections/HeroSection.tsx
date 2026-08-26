@@ -13,9 +13,9 @@ export default function HeroSection() {
   return (
     <section className="relative pt-10 pb-20 sm:pt-14 sm:pb-28 lg:pt-16 lg:pb-32 overflow-hidden bg-ivory">
       <Container>
-        {/* Main Asymmetric Grid: Sol ~45%, Sağ ~55% on Desktop */}
+        {/* Desktop: Asymmetric 45/55 Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          {/* Sol Tərəf (~45% - lg:col-span-5) */}
+          {/* Sol Tərəf: Editorial Tipoqrafiya & CTA (~45%) */}
           <div className="lg:col-span-5 flex flex-col justify-center animate-fade-up">
             {/* Eyebrow */}
             <div className="flex items-center space-x-3 mb-5 sm:mb-6">
@@ -37,25 +37,23 @@ export default function HeroSection() {
             </h1>
 
             {/* Alt Mətn */}
-            <p className="text-taupe text-sm sm:text-base lg:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-md whitespace-pre-line">
+            <p className="text-taupe text-sm sm:text-base lg:text-lg leading-relaxed font-light mb-8 sm:mb-10 max-w-md">
               {hero.subtitle}
             </p>
 
-            {/* CTA Bölməsi */}
+            {/* CTA Düymələri */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-              {/* Primary Tünd Antrasit Düymə */}
               <Link
                 href="/elaqe"
-                className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-7 py-3.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40"
+                className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-7 py-3.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne"
               >
                 <span>{hero.primaryCta}</span>
                 <span className="ml-2">→</span>
               </Link>
 
-              {/* Secondary Yalnız Text-Link */}
               <Link
                 href="/haqqimda"
-                className="group inline-flex items-center text-xs tracking-widest uppercase text-charcoal hover:text-champagne-dark transition-colors duration-300 py-1 border-b border-charcoal/30 hover:border-champagne"
+                className="group inline-flex items-center text-xs tracking-widest uppercase text-charcoal hover:text-champagne-dark transition-colors duration-300 py-1 border-b border-charcoal/30 hover:border-champagne focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne"
               >
                 <span>{hero.secondaryLink}</span>
                 <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
@@ -65,7 +63,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Sağ Tərəf (~55% - lg:col-span-7) */}
+          {/* Sağ Tərəf: Real Portret (~55%) */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end animate-fade-in">
             <div className="relative w-full max-w-lg lg:max-w-none">
               {/* Arxa Fonda Çox İncə #B59668 Ambient Glow */}
@@ -83,7 +81,7 @@ export default function HeroSection() {
                     onError={() => setImageError(true)}
                   />
                 ) : (
-                  /* Placeholder - Real şəkil əlavə edilən kimi avtomatik aktivləşir */
+                  /* Editorial Monogram & Name Fallback (No fake stock/AI images) */
                   <div className="w-full h-full flex flex-col items-center justify-between p-8 sm:p-10 bg-ivory-secondary text-charcoal">
                     <div className="w-full flex justify-between items-center text-[10px] tracking-widest uppercase text-taupe">
                       <span>PORTRET</span>

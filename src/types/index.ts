@@ -12,6 +12,7 @@ export interface ServiceRowItem {
 }
 
 export interface MethodologyPillar {
+  number: string;
   title: string;
   subtitle: string;
   description: string;
@@ -70,6 +71,7 @@ export interface ContactPageData {
     directions: string[];
     formats: string[];
     submitButton: string;
+    submittingButton: string;
     successTitle: string;
     successMessage: string;
   };
@@ -91,24 +93,32 @@ export interface AboutPageData {
     heading: string;
     subtitle: string;
   };
-  introParagraphs: string[];
-  philosophyQuote: string;
+  myApproach: {
+    eyebrow: string;
+    heading: string;
+    paragraphs: string[];
+    quote: string;
+  };
   principles: {
     number: string;
     title: string;
     description: string;
   }[];
-  focusAreas: {
-    number: string;
-    title: string;
+  methodologicalFoundations: {
+    eyebrow: string;
+    heading: string;
     description: string;
-  }[];
+    pillars: MethodologyPillar[];
+  };
 }
 
 export interface SiteContent {
   meta: {
     title: string;
     description: string;
+    ogTitle: string;
+    ogDescription: string;
+    siteUrl: string;
   };
   navigation: NavItem[];
   hero: {
@@ -168,7 +178,11 @@ export interface SiteContent {
     pillars: MethodologyPillar[];
   };
   finalCta: {
-    heading: string;
+    headingLines: {
+      line1: string;
+      line2: string;
+      line2Italic?: boolean;
+    };
     description: string;
     primaryButton: string;
     whatsappButton: string;

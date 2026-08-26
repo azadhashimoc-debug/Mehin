@@ -7,7 +7,7 @@ import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import { siteContent } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Haqqımda — Mehin İsmayılova",
+  title: "Haqqımda",
   description: "Mehin İsmayılovanın diksiya və nitq sənətinə fərdi yanaşması, pedaqoji fəlsəfəsi və tədris prinsipləri.",
 };
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
 
   return (
     <div className="pt-12 sm:pt-16 lg:pt-20 bg-ivory">
-      {/* Page Header (Hero) */}
+      {/* 1. Hero */}
       <Container>
         <div className="max-w-3xl mb-16 sm:mb-24">
           <div className="flex items-center space-x-3 mb-4">
@@ -35,7 +35,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Editorial Presentation: Portrait + Narrative */}
+        {/* 2. Mənim Yanaşmam: Portrait + Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-20 sm:pb-28 border-b border-charcoal/10 items-start">
           {/* Sol: Portret */}
           <div className="lg:col-span-5">
@@ -61,23 +61,32 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Sağ: Şəxsi Təqdimat və Fəlsəfə */}
+          {/* Sağ: Mənim Yanaşmam mətnləri */}
           <div className="lg:col-span-7 space-y-8 text-taupe text-base sm:text-lg font-light leading-relaxed">
-            {aboutPage.introParagraphs.map((para, idx) => (
+            <div className="space-y-4">
+              <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium block">
+                {aboutPage.myApproach.eyebrow}
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
+                {aboutPage.myApproach.heading}
+              </h2>
+            </div>
+
+            {aboutPage.myApproach.paragraphs.map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}
 
             {/* Philosophy Highlight Quote */}
             <div className="border-l-2 border-champagne pl-6 py-2 my-8 bg-ivory-secondary/30">
               <blockquote className="font-serif italic text-xl sm:text-2xl text-charcoal leading-snug">
-                &ldquo;{aboutPage.philosophyQuote}&rdquo;
+                &ldquo;{aboutPage.myApproach.quote}&rdquo;
               </blockquote>
             </div>
 
-            {/* Pedaqoji Yanaşma və Prinsiplər (Sadə text + dividers, kart deyil) */}
+            {/* 3. Fərdi Yanaşma, Praktiki Məşqlər, Davamlı İnkişaf */}
             <div className="pt-8 border-t border-charcoal/10">
               <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium block mb-6">
-                PEDAQOJİ PRİNSİPLƏR
+                TƏDRİS PRİNSİPLƏRİ
               </span>
 
               <div className="space-y-6">
@@ -101,19 +110,22 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Dərslərdə Fokuslandığımız İstiqamətlər (Editorial List) */}
+        {/* 4. Metodik Təməllər (01 Artikulyasiya, 02 Nəfəs, 03 İntonasiya, 04 Özünəinam) */}
         <div className="py-20 sm:py-28 border-b border-charcoal/10">
           <div className="max-w-2xl mb-14">
             <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium block mb-3">
-              METODİK TƏMƏLLƏR
+              {aboutPage.methodologicalFoundations.eyebrow}
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
-              Dərslərdə nəyə fokuslanırıq?
+            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal mb-3">
+              {aboutPage.methodologicalFoundations.heading}
             </h2>
+            <p className="text-taupe text-sm font-light">
+              {aboutPage.methodologicalFoundations.description}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {aboutPage.focusAreas.map((area) => (
+            {aboutPage.methodologicalFoundations.pillars.map((area) => (
               <div key={area.number} className="flex flex-col justify-between pt-4 border-t border-charcoal/10">
                 <div>
                   <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block mb-2">
@@ -136,14 +148,14 @@ export default function AboutPage() {
               href="/elaqe"
               className="inline-flex items-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-7 py-3.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40"
             >
-              <span>Dərsə müraciət edin</span>
+              <span>Dərs cədvəli üçün müraciət edin</span>
               <span className="ml-2">→</span>
             </Link>
           </div>
         </div>
       </Container>
 
-      {/* Final CTA */}
+      {/* 5. Final CTA */}
       <FinalCtaSection />
     </div>
   );

@@ -20,8 +20,29 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: siteContent.meta.title,
+  title: {
+    default: siteContent.meta.title,
+    template: "%s — Mehin İsmayılova",
+  },
   description: siteContent.meta.description,
+  metadataBase: new URL(siteContent.meta.siteUrl),
+  openGraph: {
+    title: siteContent.meta.ogTitle,
+    description: siteContent.meta.ogDescription,
+    url: siteContent.meta.siteUrl,
+    siteName: "Mehin İsmayılova",
+    locale: "az_AZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteContent.meta.ogTitle,
+    description: siteContent.meta.ogDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -31,9 +52,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="az" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <body className="font-sans bg-ivory text-charcoal flex flex-col min-h-screen">
+      <body className="font-sans bg-ivory text-charcoal flex flex-col min-h-screen antialiased selection:bg-champagne selection:text-ivory">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import { siteContent } from "@/data/content";
@@ -9,6 +8,8 @@ import { siteContent } from "@/data/content";
 export default function ContactPage() {
   const { contactPage, social } = siteContent;
   const [activeFaq, setActiveFaq] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,11 +24,28 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = encodeURIComponent(
-      `Salam Mehin xanım. Dərslərə müraciət edirəm.\n\nAd və Soyad: ${formData.name}\nTelefon: ${formData.phone}\nE-poçt: ${formData.email || "Göstərilməyib"}\nİstiqamət: ${formData.direction}\nFormat: ${formData.format}\nQeyd: ${formData.message || "Yoxdur"}`
-    );
-    window.open(`${social.whatsapp}?text=${text}`, "_blank");
-    setIsSubmitted(true);
+    setErrorMessage(null);
+
+    // Validation
+    if (!formData.name.trim()) {
+      setErrorMessage("Zəhmət olmasa ad və soyadınızı daxil edin.");
+      return;
+    }
+    if (!formData.phone.trim() || formData.phone.trim().length < 9) {
+      setErrorMessage("Zəhmət olmasa düzgün əlaqə nömrəsi daxil edin.");
+      return;
+    }
+
+    setIsLoading(true);
+
+    setTimeout(() => {
+      const text = encodeURIComponent(
+        `Salam Mehin xanım. Dərslərə müraciət edirəm.\n\nAd və Soyad: ${formData.name}\nTelefon: ${formData.phone}\nE-poçt: ${formData.email || "Göstərilməyib"}\nİstiqamət: ${formData.direction}\nFormat: ${formData.format}\nQeyd: ${formData.message || "Yoxdur"}`
+      );
+      window.open(`${social.whatsapp}?text=${text}`, "_blank");
+      setIsLoading(false);
+      setIsSubmitted(true);
+    }, 400);
   };
 
   const toggleFaq = (id: string) => {
@@ -88,7 +106,7 @@ export default function ContactPage() {
                   href={social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1"
+                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
                 >
                   <span>Birbaşa yazın</span>
                   <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
@@ -111,7 +129,7 @@ export default function ContactPage() {
                   href={social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1"
+                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
                 >
                   <span>Səhifəyə baxın</span>
                   <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
@@ -132,7 +150,7 @@ export default function ContactPage() {
                 </div>
                 <a
                   href={`mailto:${social.email}`}
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1"
+                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
                 >
                   <span>Məktub göndərin</span>
                   <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
@@ -155,6 +173,12 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              {errorMessage && (
+                <div className="mb-6 p-4 bg-red-50 border-l-2 border-red-500 text-red-800 text-xs tracking-wide">
+                  {errorMessage}
+                </div>
+              )}
+
               {isSubmitted ? (
                 <div className="py-12 text-center space-y-4 animate-fade-in">
                   <div className="w-12 h-12 rounded-full bg-champagne/20 text-champagne-dark mx-auto flex items-center justify-center font-serif text-xl">
@@ -168,13 +192,14 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   {/* Ad və Soyad */}
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                    <label htmlFor="form-name" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                       {contactPage.form.fields.nameLabel}
                     </label>
                     <input
+                      id="form-name"
                       type="text"
                       required
                       placeholder={contactPage.form.fields.namePlaceholder}
@@ -186,10 +211,11 @@ export default function ContactPage() {
 
                   {/* Telefon */}
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                    <label htmlFor="form-phone" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                       {contactPage.form.fields.phoneLabel}
                     </label>
                     <input
+                      id="form-phone"
                       type="tel"
                       required
                       placeholder={contactPage.form.fields.phonePlaceholder}
@@ -201,10 +227,11 @@ export default function ContactPage() {
 
                   {/* E-mail (Könüllü) */}
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                    <label htmlFor="form-email" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                       {contactPage.form.fields.emailLabel}
                     </label>
                     <input
+                      id="form-email"
                       type="email"
                       placeholder={contactPage.form.fields.emailPlaceholder}
                       value={formData.email}
@@ -216,10 +243,11 @@ export default function ContactPage() {
                   {/* Dərs İstiqaməti & Format Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                      <label htmlFor="form-direction" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                         {contactPage.form.fields.directionLabel}
                       </label>
                       <select
+                        id="form-direction"
                         value={formData.direction}
                         onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
                         className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
@@ -233,10 +261,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                      <label htmlFor="form-format" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                         {contactPage.form.fields.formatLabel}
                       </label>
                       <select
+                        id="form-format"
                         value={formData.format}
                         onChange={(e) => setFormData({ ...formData, format: e.target.value })}
                         className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
@@ -252,10 +281,11 @@ export default function ContactPage() {
 
                   {/* Qısa Mesaj */}
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                    <label htmlFor="form-message" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
                       {contactPage.form.fields.messageLabel}
                     </label>
                     <textarea
+                      id="form-message"
                       rows={3}
                       placeholder={contactPage.form.fields.messagePlaceholder}
                       value={formData.message}
@@ -268,16 +298,17 @@ export default function ContactPage() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-4 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40"
+                      disabled={isLoading}
+                      className="w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-4 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne min-h-[44px] disabled:opacity-60 cursor-pointer"
                     >
-                      <span>{contactPage.form.submitButton}</span>
-                      <span className="ml-2">→</span>
+                      <span>{isLoading ? contactPage.form.submittingButton : contactPage.form.submitButton}</span>
+                      {!isLoading && <span className="ml-2">→</span>}
                     </button>
                   </div>
                 </form>
               )}
 
-              {/* 4. WhatsApp Alternative */}
+              {/* WhatsApp Alternative */}
               <div className="mt-8 pt-6 border-t border-charcoal/10 text-center">
                 <p className="text-xs text-taupe font-light mb-2">
                   {contactPage.whatsappAlternative.question}
@@ -286,7 +317,7 @@ export default function ContactPage() {
                   href={social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal hover:text-champagne-dark transition-colors"
+                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
                 >
                   <span>{contactPage.whatsappAlternative.linkText}</span>
                   <span className="ml-1.5">→</span>
@@ -296,7 +327,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* 5. FAQ Section (Minimal Accordion with dividers) */}
+        {/* 3. FAQ Section */}
         <div className="py-20 sm:py-28">
           <div className="max-w-2xl mb-12 sm:mb-16">
             <div className="flex items-center space-x-3 mb-3">
@@ -322,7 +353,8 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => toggleFaq(item.id)}
-                    className="w-full flex items-center justify-between text-left focus:outline-none group"
+                    className="w-full flex items-center justify-between text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne group min-h-[44px]"
+                    aria-expanded={isOpen}
                   >
                     <span className="font-serif text-xl sm:text-2xl text-charcoal group-hover:text-champagne-dark transition-colors pr-6">
                       {item.question}
@@ -344,7 +376,7 @@ export default function ContactPage() {
         </div>
       </Container>
 
-      {/* 6. Final CTA */}
+      {/* 4. Final CTA */}
       <FinalCtaSection />
     </div>
   );

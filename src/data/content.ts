@@ -3,7 +3,10 @@ import { SiteContent } from "@/types";
 export const siteContent: SiteContent = {
   meta: {
     title: "Mehin İsmayılova — Diksiya və Nitq Müəlliməsi",
-    description: "Mehin İsmayılova ilə fərdi diksiya, aydın nitq, düzgün nəfəs texnikaları və inamlı ictimai çıxış dərsləri.",
+    description: "Diksiya, düzgün tələffüz, nitq və ictimai çıxış üzrə fərdi dərslər.",
+    ogTitle: "Mehin İsmayılova — Diksiya və Nitq Müəlliməsi",
+    ogDescription: "Diksiya, düzgün tələffüz, nitq və ictimai çıxış üzrə fərdi dərslər.",
+    siteUrl: "https://mehinismayilova.az",
   },
   navigation: [
     { label: "Ana səhifə", href: "/" },
@@ -13,12 +16,12 @@ export const siteContent: SiteContent = {
   hero: {
     eyebrow: "DİKSİYA • NİTQ • TƏLƏFFÜZ",
     titleLines: {
-      line1: "Sözünüzü",
-      line2: "daha inamlı",
+      line1: "Sözünüzü daha",
+      line2: "inamlı",
       line2Italic: true,
       line3: "ifadə edin.",
     },
-    subtitle: "Nitqiniz sizin özünüzü necə ifadə etdiyinizdir.\nDüzgün tələffüz, səs və intonasiya üzərində fərdi yanaşma ilə işləyirik.",
+    subtitle: "Nitqiniz sizin kimliyinizi ifadə edir. Düzgün tələffüz, təbii səs və özünəinam üzərində birlikdə işləyək.",
     primaryCta: "Dərsə müraciət et",
     secondaryLink: "Haqqımda",
     imageCaption: {
@@ -50,7 +53,7 @@ export const siteContent: SiteContent = {
       line2: "aydın demək deyil.",
       line2Italic: true,
       line3: "Özünü necə ifadə etdiyini",
-      line4: "də dəyişməkdir.",
+      line4: "dəyişməkdir.",
       line4Italic: true,
     },
     author: "Mehin İsmayılova",
@@ -86,8 +89,8 @@ export const siteContent: SiteContent = {
   aboutPreview: {
     eyebrow: "HAQQIMDA",
     headingLines: {
-      line1: "İnsan öz səsini",
-      line2: "tapanda, nitqi də",
+      line1: "İnsan öz səsini tapanda,",
+      line2: "nitqi də",
       line2Italic: true,
       line3: "dəyişir.",
     },
@@ -106,48 +109,92 @@ export const siteContent: SiteContent = {
       heading: "Haqqımda",
       subtitle: "Daha aydın danışmaq, daha inamlı ifadə olunmaq.",
     },
-    introParagraphs: [
-      "Mən Mehin İsmayılova, diksiya və nitq təlimçisiyəm. İllərdir ki, tələbələrimə və müxtəlif peşə sahiblərinə öz səslərini kəşf etməkdə və fikirlərini təbii inamla çatdırmaqda bələdçilik edirəm.",
-      "Diksiya və nitq təlimi mənim üçün sadəcə texniki qaydalar toplusu deyil — insanın daxili potensialını, fikirlərinin aydınlığını və cəmiyyətdəki duruşunu formalaşdıran bir sənətdir.",
-    ],
-    philosophyQuote: "Hər bir səs fərdi bir kimlikdir. Doğru tənzimlənmiş səs insanın ən güclü vizit kartıdır.",
+    myApproach: {
+      eyebrow: "MƏNİM YANAŞMAM",
+      heading: "Səs — insanın daxili gücünün ifadəsidir.",
+      paragraphs: [
+        "Mən Mehin İsmayılova, diksiya və nitq müəlliməsiyəm. Tələbələrimə öz səslərini kəşf etməkdə və fikirlərini təbii inamla çatdırmaqda fərdi yanaşma ilə bələdçilik edirəm.",
+        "Diksiya və nitq təlimi sadəcə sözlərin mexaniki tələffüzü deyil — insanın özünü rahat ifadə etməsi, səsinin təbii tembrini tapması və fikirlərini aydın şəkildə çatdırmasıdır.",
+      ],
+      quote: "Hər bir səs fərdi bir kimlikdir. Düzgün ifadə olunan səs insanın ən güclü vizit kartıdır.",
+    },
     principles: [
       {
         number: "01",
         title: "Fərdi Yanaşma",
-        description: "Hər kəsin danışıq aparatı və səs tembri unikal olduğu üçün standart şablonlar əvəzinə fərdi inkişaf xəritəsi tətbiq olunur.",
+        description: "Hər bir insanın danışıq aparatı və səs tembri unikal olduğu üçün standart şablonlar əvəzinə fərdi inkişaf planı tətbiq olunur.",
       },
       {
         number: "02",
-        title: "Təbii İnam və Rahatlıq",
-        description: "Süni və gərgin tələffüz deyil, səsin və bədənin tam sərbəstliyi ilə təbii və axıcı danışıq qabiliyyətinin formalaşdırılması.",
+        title: "Praktiki Məşqlər",
+        description: "Yalnız nəzəriyyə deyil, artikulyasiya gimnastikası, tənəffüs və intonasiya üzərində gündəlik həyatda tətbiq oluna bilən praktik vərdişlər.",
       },
       {
         number: "03",
-        title: "Praktiki və Davamlı Vərdişlər",
-        description: "Yalnız nəzəriyyə deyil, gündəlik ünsiyyətdə və iş həyatında dərhal tətbiq olunan effektiv artikulyasiya və tənəffüs vərdişləri.",
+        title: "Davamlı İnkişaf",
+        description: "Qazanılmış aydın tələffüz və inamın qısa müddətli deyil, uzunmüddətli və təbii vərdişə çevrilməsi üçün mərhələli tədris.",
       },
     ],
-    focusAreas: [
+    methodologicalFoundations: {
+      eyebrow: "METODİK TƏMƏLLƏR",
+      heading: "Dərslərdə nəyə fokuslanırıq?",
+      description: "Hər bir dərs 4 təməl metodik istiqamət üzərində qurulur.",
+      pillars: [
+        {
+          number: "01",
+          title: "Artikulyasiya",
+          subtitle: "01 / Dəqiqlik",
+          description: "Dil, dodaq və çənə əzələlərinin sərbəstləşdirilməsi ilə hər bir səsin təmiz və aydın səslənməsi.",
+        },
+        {
+          number: "02",
+          title: "Nəfəs",
+          subtitle: "02 / Təməl",
+          description: "Doğru diafraqma tənəffüsü ilə səsin yorulmadan, titrəmədən və uzun cümlələrdə tükənmədən sabit axışı.",
+        },
+        {
+          number: "03",
+          title: "İntonasiya",
+          subtitle: "03 / Duyğu",
+          description: "Monotonluğu qıraraq məntiqi vurğular, ritm və melodiya ilə danışığı daha canlı və təsirli etmək.",
+        },
+        {
+          number: "04",
+          title: "Özünəinam",
+          subtitle: "04 / Təsir",
+          description: "Daxili həyəcanı idarə edərək həm fərdi ünsiyyətdə, həm də auditoriya qarşısında rahat və inamlı duruş.",
+        },
+      ],
+    },
+  },
+  methodology: {
+    eyebrow: "METODOLOGİYA",
+    heading: "Dərslərdə nəyə fokuslanırıq?",
+    description: "Kompleks və fərdi inkişaf üçün 4 təməl sütun üzərində qurulmuş tədris proqramı.",
+    pillars: [
       {
         number: "01",
-        title: "Artikulyasiya Aparatı",
-        description: "Dil, dodaq və çənə əzələlərinin sərbəstləşdirilməsi, səslərin dəqiq və aydın tələffüzü.",
+        title: "Artikulyasiya",
+        subtitle: "01 / Dəqiqlik",
+        description: "Danışıq aparatının sərbəst və elastik işləməsi ilə hər bir səsin kristal aydınlıqda səslənməsi.",
       },
       {
         number: "02",
-        title: "Diafraqma və Nəfəs İdarəsi",
-        description: "Səsin yorulmadan, titrəmədən və uzun cümlələrdə tükənmədən dərin nəfəslə sabit axışı.",
+        title: "Nəfəs",
+        subtitle: "02 / Təməl",
+        description: "Doğru diafraqma tənəffüsü ilə səsin yorulmadan və uzun cümlələrdə tükənmədən sabit axışı.",
       },
       {
         number: "03",
-        title: "Tembr və İntonasiya",
-        description: "Monotonluğun aradan qaldırılması, məntiqi vurğular və canlı danışıq melodiyası.",
+        title: "İntonasiya",
+        subtitle: "03 / Duyğu",
+        description: "Məntiqi vurğular, ritm və melodiya ilə dinləyicinin diqqətini canlı saxlamaq bacarığı.",
       },
       {
         number: "04",
-        title: "İctimai Çıxış və Auditoriya",
-        description: "Həyəcanın idarə edilməsi, göz təması və kamera qarşısında rahatlıq.",
+        title: "Özünəinam",
+        subtitle: "04 / Təsir",
+        description: "Həyəcanı aradan qaldıraraq həm fərdi, həm də ictimai mühitdə rahat, səmimi və inamlı duruş.",
       },
     ],
   },
@@ -167,7 +214,7 @@ export const siteContent: SiteContent = {
     },
     form: {
       title: "Dərsə müraciət formu",
-      subtitle: "Məlumatlarınızı daxil edin, müraciətiniz qeydə alınsın.",
+      subtitle: "Məlumatlarınızı daxil edin, müraciətiniz birbaşa qeydə alınsın.",
       fields: {
         nameLabel: "Ad və soyad *",
         namePlaceholder: "Məs: Aysel Məmmədova",
@@ -191,6 +238,7 @@ export const siteContent: SiteContent = {
         "Onlayn (Zoom / Google Meet)",
       ],
       submitButton: "Müraciət göndər",
+      submittingButton: "Göndərilir...",
       successTitle: "Təşəkkür edirik!",
       successMessage: "Müraciətiniz qeydə alındı. Ən qısa zamanda sizinlə əlaqə saxlanılacaqdır.",
     },
@@ -226,38 +274,15 @@ export const siteContent: SiteContent = {
       ],
     },
   },
-  methodology: {
-    eyebrow: "METODOLOGİYA",
-    heading: "Dərslərdə nəyə fokuslanırıq?",
-    description: "Kompleks və fərdi inkişaf üçün 4 təməl sütun üzərində qurulmuş xüsusi tədris proqramı.",
-    pillars: [
-      {
-        title: "Artikulyasiya",
-        subtitle: "01 / Dəqiqlik",
-        description: "Danışıq aparatının (çənə, dil, dodaqlar) sərbəst və elastik işləməsi ilə hər bir səsin kristal aydınlıqda səslənməsi.",
-      },
-      {
-        title: "Nəfəs",
-        subtitle: "02 / Təməl",
-        description: "Doğru diafraqma tənəffüsü ilə səsin yorulmadan, titrəmədən və uzun cümlələrdə tükənmədən sabit axışı.",
-      },
-      {
-        title: "İntonasiya",
-        subtitle: "03 / Duyğu",
-        description: "Monotonluğu qıraraq məntiqi vurğular, ritm və melodiya ilə dinləyicinin diqqətini canlı saxlamaq bacarığı.",
-      },
-      {
-        title: "Özünəinam",
-        subtitle: "04 / Təsir",
-        description: "Daxili həyəcan və gərginliyi aradan qaldıraraq həm fərdi, həm də ictimai mühitdə rahat, səmimi və inamlı duruş.",
-      },
-    ],
-  },
   finalCta: {
-    heading: "Danışığınızda fərqi\nhiss etməyə başlayın.",
+    headingLines: {
+      line1: "Danışığınızda fərqi",
+      line2: "hiss etməyə başlayın.",
+      line2Italic: true,
+    },
     description: "Səsinizin potensialını üzə çıxarmaq və fərdi tədris proqramına yazılmaq üçün müraciət edin.",
     primaryButton: "Dərsə müraciət et",
-    whatsappButton: "WhatsApp ilə yazın",
+    whatsappButton: "WhatsApp",
   },
   social: {
     instagram: "https://instagram.com/mehinismayilova",
