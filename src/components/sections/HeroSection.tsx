@@ -29,7 +29,7 @@ export default function HeroSection() {
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal font-normal leading-[1.08] tracking-tight mb-6 sm:mb-8">
               <span>{hero.titleLines.line1}</span>
               <br />
-              <span className={hero.titleLines.line2Italic ? "italic font-light" : ""}>
+              <span className={hero.titleLines.line2Italic ? "italic font-light text-charcoal/90" : ""}>
                 {hero.titleLines.line2}
               </span>
               <br />
@@ -45,7 +45,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-6 sm:gap-8">
               <Link
                 href="/elaqe"
-                className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-7 py-3.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne"
+                className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-7 py-3.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne min-h-[44px]"
               >
                 <span>{hero.primaryCta}</span>
                 <span className="ml-2">→</span>
@@ -53,23 +53,23 @@ export default function HeroSection() {
 
               <Link
                 href="/haqqimda"
-                className="group inline-flex items-center text-xs tracking-widest uppercase text-charcoal hover:text-champagne-dark transition-colors duration-300 py-1 border-b border-charcoal/30 hover:border-champagne focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne"
+                className="group inline-flex items-center text-xs tracking-widest uppercase text-charcoal hover:text-champagne-dark transition-colors duration-300 py-2 border-b border-charcoal/30 hover:border-champagne focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne min-h-[44px]"
               >
                 <span>{hero.secondaryLink}</span>
-                <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
+                <span className="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300">
                   →
                 </span>
               </Link>
             </div>
           </div>
 
-          {/* Sağ Tərəf: Real Portret (~55%) */}
+          {/* Sağ Tərəf: Real Portret / Editorial Monoqram Kompozisiyası (~55%) */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end animate-fade-in">
             <div className="relative w-full max-w-lg lg:max-w-none">
               {/* Arxa Fonda Çox İncə #B59668 Ambient Glow */}
               <div className="absolute -inset-4 bg-champagne/10 rounded-2xl filter blur-3xl opacity-70 pointer-events-none -z-10" />
 
-              {/* Editorial Şəkil Konteyneri (~4:5 nisbət, 4px radius, çox zəif shadow) */}
+              {/* Editorial Konteyner (~4:5 nisbət, 4px radius, zəif shadow) */}
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[4px] bg-ivory-secondary border border-charcoal/10 shadow-[0_12px_28px_rgba(23,22,20,0.04)]">
                 {!imageError ? (
                   <Image
@@ -81,33 +81,40 @@ export default function HeroSection() {
                     onError={() => setImageError(true)}
                   />
                 ) : (
-                  /* Editorial Monogram & Name Fallback (No fake stock/AI images) */
-                  <div className="w-full h-full flex flex-col items-center justify-between p-8 sm:p-10 bg-ivory-secondary text-charcoal">
-                    <div className="w-full flex justify-between items-center text-[10px] tracking-widest uppercase text-taupe">
-                      <span>PORTRET</span>
-                      <span>EDITORIAL 01</span>
+                  /* Premium Editorial Monoqram Tərtibatı (İnsan fotosu olmadan belə tam və zərif) */
+                  <div className="w-full h-full flex flex-col items-center justify-between p-8 sm:p-12 bg-ivory-secondary text-charcoal relative">
+                    <div className="w-full flex justify-between items-center text-[10px] tracking-widest uppercase text-taupe font-medium">
+                      <span>DİKSİYA &amp; NİTQ</span>
+                      <span className="text-champagne-dark">PORTFOLIO</span>
                     </div>
 
-                    <div className="text-center my-auto">
-                      <div className="w-20 h-20 rounded-full border border-champagne/40 mx-auto flex items-center justify-center mb-5 text-champagne-dark font-serif text-3xl italic">
-                        M
+                    <div className="text-center my-auto flex flex-col items-center">
+                      {/* Zərif Qızılı İkiqat Dairə & Monoqram */}
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-champagne/40 p-1 flex items-center justify-center mb-6 animate-monogram">
+                        <div className="w-full h-full rounded-full border border-champagne/30 bg-ivory flex items-center justify-center">
+                          <span className="text-champagne-dark font-serif text-3xl sm:text-4xl italic">
+                            MI
+                          </span>
+                        </div>
                       </div>
-                      <span className="font-serif text-2xl sm:text-3xl text-charcoal block">
+
+                      <span className="font-serif text-2xl sm:text-3xl text-charcoal tracking-wide block">
                         {hero.imageCaption.name}
                       </span>
                       <span className="text-[11px] tracking-widest uppercase text-champagne-dark mt-2 block font-medium">
                         {hero.imageCaption.role}
                       </span>
+                      <div className="w-12 h-px bg-champagne/40 mt-4" />
                     </div>
 
-                    <div className="text-[11px] text-taupe/60 text-center font-serif italic">
-                      /public/images/mehin-hero.jpg
+                    <div className="text-[11px] text-taupe/70 text-center font-serif italic max-w-xs">
+                      &ldquo;Sözünüzü daha inamlı ifadə edin.&rdquo;
                     </div>
                   </div>
                 )}
 
                 {/* Şəkil Üzərində İncə Editorial Caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent text-ivory">
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent text-ivory">
                   <span className="font-serif text-lg sm:text-xl block tracking-wide">
                     {hero.imageCaption.name}
                   </span>
@@ -117,14 +124,14 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Zərif Champagne Dekorativ Xətt */}
+              {/* Zərif Champagne Künc Xətti */}
               <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b border-r border-champagne/40 pointer-events-none" />
             </div>
           </div>
         </div>
 
         {/* Hero Altında: Editorial Horizontal Metadata (Kart deyil, vertical divider ilə) */}
-        <div className="mt-16 sm:mt-24 pt-10 border-t border-charcoal/10">
+        <div className="mt-16 sm:mt-24 pt-10 border-t border-charcoal/10 animate-fade-up-delay">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-charcoal/10">
             {hero.stats.map((stat, idx) => (
               <div

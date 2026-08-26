@@ -35,24 +35,33 @@
   }
 }
 
-/* Editorial Minimal Animations */
+/* Editorial Keyframe Animations */
 @keyframes editorialFadeUp {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes editorialFadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes monogramPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
   }
 }
 
@@ -60,8 +69,17 @@
   animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.animate-fade-up-delay {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  opacity: 0;
+}
+
 .animate-fade-in {
-  animation: editorialFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: editorialFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-monogram {
+  animation: monogramPulse 6s ease-in-out infinite;
 }
 
 /* Custom Editorial Elements */
