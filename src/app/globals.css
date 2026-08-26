@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F7F4EE;
+    --bg-secondary: #EFE9DF;
+    --text-primary: #171614;
+    --text-muted: #706B63;
+    --accent-gold: #B59668;
+    --border-subtle: rgba(23, 22, 20, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    selection-background-color: #B59668;
+    selection-color: #F7F4EE;
+  }
+
+  ::selection {
+    background-color: #B59668;
+    color: #F7F4EE;
+  }
+}
+
+/* Editorial Minimal Animations */
+@keyframes editorialFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: editorialFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Editorial Elements */
+.editorial-border-b {
+  border-bottom: 1px solid rgba(23, 22, 20, 0.12);
+}
+
+.editorial-border-t {
+  border-top: 1px solid rgba(23, 22, 20, 0.12);
+}
+
+.editorial-border-l {
+  border-left: 1px solid rgba(23, 22, 20, 0.12);
+}

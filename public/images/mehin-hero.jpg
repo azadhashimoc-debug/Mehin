@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <rect width="100%" height="100%" fill="#EFE9DF"/>
+  <rect x="20" y="20" width="760" height="960" fill="none" stroke="#B59668" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="400" cy="400" r="140" fill="#F7F4EE" stroke="#B59668" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="400" y="420" font-family="Georgia, serif" font-size="72" fill="#B59668" text-anchor="middle" font-style="italic">M</text>
+  <text x="400" y="600" font-family="Georgia, serif" font-size="32" fill="#171614" text-anchor="middle" letter-spacing="2">MEHİN İSMAYILOVA</text>
+  <text x="400" y="640" font-family="sans-serif" font-size="14" fill="#706B63" text-anchor="middle" letter-spacing="4">DİKSİYA &amp; NİTQ MÜƏLLİMƏSİ</text>
+  <line x1="360" y1="670" x2="440" y2="670" stroke="#B59668" stroke-width="1"/>
+  <text x="400" y="920" font-family="Georgia, serif" font-size="16" fill="#706B63" text-anchor="middle" font-style="italic">"Sözünüzü daha inamlı ifadə edin."</text>
+</svg>
