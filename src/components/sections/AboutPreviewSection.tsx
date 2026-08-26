@@ -14,20 +14,20 @@ export default function AboutPreviewSection() {
   return (
     <section className="py-24 sm:py-32 lg:py-40 bg-ivory-secondary/30 border-t border-charcoal/10 overflow-hidden">
       <Container>
-        {/* Desktop: Balanced Asymmetric Layout */}
+        {/* Desktop: Asymmetric 40/60 Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Sol Tərəf: Real Təlim & Seminar Fotosu (~48%) */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-start">
-            <ScrollReveal delay={0} className="w-full">
+          {/* Sol Tərəf: Mehin Tək Foto (~40%) */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-start">
+            <ScrollReveal delay={0} className="w-full max-w-md lg:max-w-none">
               <div className="relative w-full group">
                 {/* Arxa Fonda Çox İncə #B59668 Ambient Glow */}
                 <div className="absolute -inset-3 bg-champagne/10 rounded-xl filter blur-2xl opacity-60 pointer-events-none -z-10 transition-opacity duration-700 group-hover:opacity-90" />
 
-                {/* Editorial Konteyner (Landscape ~4:3 nisbət, 4px radius) */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[4px] bg-ivory-secondary border border-charcoal/10 shadow-[0_10px_25px_rgba(23,22,20,0.03)]">
+                {/* Editorial Konteyner (~3:4 nisbət, 4px radius) */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[4px] bg-ivory-secondary border border-charcoal/10 shadow-[0_10px_25px_rgba(23,22,20,0.03)]">
                   {!imageError ? (
                     <Image
-                      src="/images/mehin-about.jpg"
+                      src="/images/mehin-teaching.jpg"
                       alt={aboutPreview.imageAlt}
                       fill
                       unoptimized
@@ -66,12 +66,12 @@ export default function AboutPreviewSection() {
                   )}
 
                   {/* Şəkil Üzərində İncə Editorial Caption */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent text-ivory">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent text-ivory">
                     <span className="text-xs font-serif tracking-wide block">
-                      Təlim və Tədris Fəaliyyəti
+                      Mehin İsmayılova
                     </span>
-                    <span className="text-[10px] tracking-widest uppercase text-champagne-light block mt-0.5">
-                      Fərdi &amp; Qrup Təlimləri
+                    <span className="text-[10px] tracking-widest uppercase text-champagne-light block">
+                      Diksiya &amp; Nitq Mütəxəssisi
                     </span>
                   </div>
                 </div>
@@ -82,8 +82,8 @@ export default function AboutPreviewSection() {
             </ScrollReveal>
           </div>
 
-          {/* Sağ Tərəf: Bio, Editorial Details & CTA (~52%) */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          {/* Sağ Tərəf: Bio, Editorial Details & CTA (~60%) */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
             <ScrollReveal delay={100} className="max-w-xl">
               <div>
                 {/* Eyebrow */}
