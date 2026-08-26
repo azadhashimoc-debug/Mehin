@@ -35,11 +35,11 @@
   }
 }
 
-/* Editorial Keyframe Animations */
+/* Page Load Animations */
 @keyframes editorialFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   100% {
     opacity: 1;
@@ -56,41 +56,83 @@
   }
 }
 
-@keyframes monogramPulse {
-  0%, 100% {
+@keyframes monogramEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.02);
-  }
 }
 
-.animate-fade-up {
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.anim-navbar-fade {
+  animation: editorialFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.animate-fade-up-delay {
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+.anim-hero-eyebrow {
+  animation: editorialFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-hero-heading {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
   opacity: 0;
 }
 
-.animate-fade-in {
-  animation: editorialFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.anim-hero-desc {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  opacity: 0;
 }
 
-.animate-monogram {
-  animation: monogramPulse 6s ease-in-out infinite;
+.anim-hero-cta {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+  opacity: 0;
 }
 
-/* Custom Editorial Elements */
-.editorial-border-b {
-  border-bottom: 1px solid rgba(23, 22, 20, 0.12);
+.anim-hero-stats {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+  opacity: 0;
 }
 
-.editorial-border-t {
-  border-top: 1px solid rgba(23, 22, 20, 0.12);
+.anim-monogram-entrance {
+  animation: monogramEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.editorial-border-l {
-  border-left: 1px solid rgba(23, 22, 20, 0.12);
+/* Subtle Left-to-Right Underline Reveal for Nav */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #B59668;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link-underline.active::after {
+  transform: scaleX(1);
+}
+
+/* Reduced Motion Support for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

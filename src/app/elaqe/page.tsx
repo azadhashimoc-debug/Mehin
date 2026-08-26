@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import { siteContent } from "@/data/content";
 
@@ -57,14 +58,14 @@ export default function ContactPage() {
       {/* 1. Hero Section */}
       <Container>
         <div className="max-w-3xl mb-16 sm:mb-24">
-          <div className="flex items-center space-x-3 mb-4">
+          <div className="flex items-center space-x-3 mb-4 anim-hero-eyebrow">
             <span className="w-6 h-[1px] bg-champagne" />
             <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium">
               {contactPage.hero.eyebrow}
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal font-normal leading-[1.08] mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal font-normal leading-[1.08] mb-6 anim-hero-heading">
             <span>{contactPage.hero.headingLines.line1}</span>
             <br />
             <span className={contactPage.hero.headingLines.line2Italic ? "italic font-light" : ""}>
@@ -72,304 +73,318 @@ export default function ContactPage() {
             </span>
           </h1>
 
-          <p className="text-taupe text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl">
+          <p className="text-taupe text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl anim-hero-desc">
             {contactPage.hero.subtitle}
           </p>
         </div>
 
         {/* 2. Main Two-Column Layout (Desktop) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-24 sm:pb-32 border-b border-charcoal/10 items-start">
-          {/* Sol: Əlaqə Kanalları (Editorial List, kart deyil) */}
+          {/* Sol: Əlaqə Kanalları */}
           <div className="lg:col-span-5 space-y-8">
-            <div>
-              <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal mb-3">
-                {contactPage.sidebar.heading}
-              </h2>
-              <p className="text-taupe text-sm sm:text-base font-light leading-relaxed">
-                {contactPage.sidebar.description}
-              </p>
-            </div>
-
-            {/* Editorial Contact List with thin dividers */}
-            <div className="divide-y divide-charcoal/10 border-y border-charcoal/10 pt-2">
-              {/* WhatsApp */}
-              <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
-                <div>
-                  <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
-                    WHATSAPP
-                  </span>
-                  <span className="text-xs text-taupe font-light">
-                    Sürətli və birbaşa ünsiyyət
-                  </span>
-                </div>
-                <a
-                  href={social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
-                >
-                  <span>Birbaşa yazın</span>
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </a>
+            <ScrollReveal delay={0}>
+              <div>
+                <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal mb-3">
+                  {contactPage.sidebar.heading}
+                </h2>
+                <p className="text-taupe text-sm sm:text-base font-light leading-relaxed">
+                  {contactPage.sidebar.description}
+                </p>
               </div>
 
-              {/* Instagram */}
-              <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
-                <div>
-                  <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
-                    INSTAGRAM
-                  </span>
-                  <span className="text-xs text-taupe font-light">
-                    {social.instagramHandle}
-                  </span>
+              {/* Editorial Contact List with thin dividers */}
+              <div className="divide-y divide-charcoal/10 border-y border-charcoal/10 pt-2 mt-6">
+                {/* WhatsApp */}
+                <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                  <div>
+                    <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
+                      WHATSAPP
+                    </span>
+                    <span className="text-xs text-taupe font-light">
+                      Sürətli və birbaşa ünsiyyət
+                    </span>
+                  </div>
+                  <a
+                    href={social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
+                  >
+                    <span>Birbaşa yazın</span>
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </a>
                 </div>
-                <a
-                  href={social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
-                >
-                  <span>Səhifəyə baxın</span>
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </a>
-              </div>
 
-              {/* E-Poçt */}
-              <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
-                <div>
-                  <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
-                    E-POÇT
-                  </span>
-                  <span className="text-xs text-taupe font-light">
-                    {social.email}
-                  </span>
+                {/* Instagram */}
+                <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                  <div>
+                    <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
+                      INSTAGRAM
+                    </span>
+                    <span className="text-xs text-taupe font-light">
+                      {social.instagramHandle}
+                    </span>
+                  </div>
+                  <a
+                    href={social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
+                  >
+                    <span>Səhifəyə baxın</span>
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </a>
                 </div>
-                <a
-                  href={`mailto:${social.email}`}
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
-                >
-                  <span>Məktub göndərin</span>
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </a>
+
+                {/* E-Poçt */}
+                <div className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                  <div>
+                    <span className="text-[10px] tracking-widest uppercase text-champagne-dark font-medium block">
+                      E-POÇT
+                    </span>
+                    <span className="text-xs text-taupe font-light">
+                      {social.email}
+                    </span>
+                  </div>
+                  <a
+                    href={`mailto:${social.email}`}
+                    className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal group-hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
+                  >
+                    <span>Məktub göndərin</span>
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Sağ: Dərsə Müraciət Formu */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 bg-ivory border border-charcoal/15 rounded-[4px]">
-              <div className="mb-8">
-                <h3 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
-                  {contactPage.form.title}
-                </h3>
-                <p className="text-taupe text-xs sm:text-sm font-light mt-1">
-                  {contactPage.form.subtitle}
-                </p>
-              </div>
-
-              {errorMessage && (
-                <div className="mb-6 p-4 bg-red-50 border-l-2 border-red-500 text-red-800 text-xs tracking-wide">
-                  {errorMessage}
-                </div>
-              )}
-
-              {isSubmitted ? (
-                <div className="py-12 text-center space-y-4 animate-fade-in">
-                  <div className="w-12 h-12 rounded-full bg-champagne/20 text-champagne-dark mx-auto flex items-center justify-center font-serif text-xl">
-                    ✓
-                  </div>
-                  <h4 className="font-serif text-2xl text-charcoal">
-                    {contactPage.form.successTitle}
-                  </h4>
-                  <p className="text-taupe text-sm max-w-md mx-auto font-light leading-relaxed">
-                    {contactPage.form.successMessage}
+            <ScrollReveal delay={100}>
+              <div className="p-8 sm:p-10 bg-ivory border border-charcoal/15 rounded-[4px]">
+                <div className="mb-8">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
+                    {contactPage.form.title}
+                  </h3>
+                  <p className="text-taupe text-xs sm:text-sm font-light mt-1">
+                    {contactPage.form.subtitle}
                   </p>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  {/* Ad və Soyad */}
-                  <div>
-                    <label htmlFor="form-name" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                      {contactPage.form.fields.nameLabel}
-                    </label>
-                    <input
-                      id="form-name"
-                      type="text"
-                      required
-                      placeholder={contactPage.form.fields.namePlaceholder}
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
-                    />
-                  </div>
 
-                  {/* Telefon */}
-                  <div>
-                    <label htmlFor="form-phone" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                      {contactPage.form.fields.phoneLabel}
-                    </label>
-                    <input
-                      id="form-phone"
-                      type="tel"
-                      required
-                      placeholder={contactPage.form.fields.phonePlaceholder}
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
-                    />
+                {errorMessage && (
+                  <div className="mb-6 p-4 bg-red-50 border-l-2 border-red-500 text-red-800 text-xs tracking-wide">
+                    {errorMessage}
                   </div>
+                )}
 
-                  {/* E-mail (Könüllü) */}
-                  <div>
-                    <label htmlFor="form-email" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                      {contactPage.form.fields.emailLabel}
-                    </label>
-                    <input
-                      id="form-email"
-                      type="email"
-                      placeholder={contactPage.form.fields.emailPlaceholder}
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
-                    />
+                {isSubmitted ? (
+                  <div className="py-12 text-center space-y-4 animate-fade-in">
+                    <div className="w-12 h-12 rounded-full bg-champagne/20 text-champagne-dark mx-auto flex items-center justify-center font-serif text-xl">
+                      ✓
+                    </div>
+                    <h4 className="font-serif text-2xl text-charcoal">
+                      {contactPage.form.successTitle}
+                    </h4>
+                    <p className="text-taupe text-sm max-w-md mx-auto font-light leading-relaxed">
+                      {contactPage.form.successMessage}
+                    </p>
                   </div>
-
-                  {/* Dərs İstiqaməti & Format Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                    {/* Ad və Soyad */}
                     <div>
-                      <label htmlFor="form-direction" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                        {contactPage.form.fields.directionLabel}
+                      <label htmlFor="form-name" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                        {contactPage.form.fields.nameLabel}
                       </label>
-                      <select
-                        id="form-direction"
-                        value={formData.direction}
-                        onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
-                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
-                      >
-                        {contactPage.form.directions.map((dir, idx) => (
-                          <option key={idx} value={dir}>
-                            {dir}
-                          </option>
-                        ))}
-                      </select>
+                      <input
+                        id="form-name"
+                        type="text"
+                        required
+                        placeholder={contactPage.form.fields.namePlaceholder}
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
+                      />
                     </div>
 
+                    {/* Telefon */}
                     <div>
-                      <label htmlFor="form-format" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                        {contactPage.form.fields.formatLabel}
+                      <label htmlFor="form-phone" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                        {contactPage.form.fields.phoneLabel}
                       </label>
-                      <select
-                        id="form-format"
-                        value={formData.format}
-                        onChange={(e) => setFormData({ ...formData, format: e.target.value })}
-                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
-                      >
-                        {contactPage.form.formats.map((fmt, idx) => (
-                          <option key={idx} value={fmt}>
-                            {fmt}
-                          </option>
-                        ))}
-                      </select>
+                      <input
+                        id="form-phone"
+                        type="tel"
+                        required
+                        placeholder={contactPage.form.fields.phonePlaceholder}
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
+                      />
                     </div>
-                  </div>
 
-                  {/* Qısa Mesaj */}
-                  <div>
-                    <label htmlFor="form-message" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
-                      {contactPage.form.fields.messageLabel}
-                    </label>
-                    <textarea
-                      id="form-message"
-                      rows={3}
-                      placeholder={contactPage.form.fields.messagePlaceholder}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors resize-none"
-                    />
-                  </div>
+                    {/* E-mail (Könüllü) */}
+                    <div>
+                      <label htmlFor="form-email" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                        {contactPage.form.fields.emailLabel}
+                      </label>
+                      <input
+                        id="form-email"
+                        type="email"
+                        placeholder={contactPage.form.fields.emailPlaceholder}
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors"
+                      />
+                    </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className="w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-4 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne min-h-[44px] disabled:opacity-60 cursor-pointer"
-                    >
-                      <span>{isLoading ? contactPage.form.submittingButton : contactPage.form.submitButton}</span>
-                      {!isLoading && <span className="ml-2">→</span>}
-                    </button>
-                  </div>
-                </form>
-              )}
+                    {/* Dərs İstiqaməti & Format Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="form-direction" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                          {contactPage.form.fields.directionLabel}
+                        </label>
+                        <select
+                          id="form-direction"
+                          value={formData.direction}
+                          onChange={(e) => setFormData({ ...formData, direction: e.target.value })}
+                          className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
+                        >
+                          {contactPage.form.directions.map((dir, idx) => (
+                            <option key={idx} value={dir}>
+                              {dir}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
 
-              {/* WhatsApp Alternative */}
-              <div className="mt-8 pt-6 border-t border-charcoal/10 text-center">
-                <p className="text-xs text-taupe font-light mb-2">
-                  {contactPage.whatsappAlternative.question}
-                </p>
-                <a
-                  href={social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
-                >
-                  <span>{contactPage.whatsappAlternative.linkText}</span>
-                  <span className="ml-1.5">→</span>
-                </a>
+                      <div>
+                        <label htmlFor="form-format" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                          {contactPage.form.fields.formatLabel}
+                        </label>
+                        <select
+                          id="form-format"
+                          value={formData.format}
+                          onChange={(e) => setFormData({ ...formData, format: e.target.value })}
+                          className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal rounded-[4px] transition-colors cursor-pointer"
+                        >
+                          {contactPage.form.formats.map((fmt, idx) => (
+                            <option key={idx} value={fmt}>
+                              {fmt}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Qısa Mesaj */}
+                    <div>
+                      <label htmlFor="form-message" className="block text-[11px] tracking-widest uppercase text-charcoal font-medium mb-2">
+                        {contactPage.form.fields.messageLabel}
+                      </label>
+                      <textarea
+                        id="form-message"
+                        rows={3}
+                        placeholder={contactPage.form.fields.messagePlaceholder}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full bg-ivory border border-charcoal/15 focus:border-champagne focus:outline-none px-4 py-3.5 text-sm text-charcoal placeholder:text-taupe/40 rounded-[4px] transition-colors resize-none"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="group w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-4 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne min-h-[44px] disabled:opacity-60 cursor-pointer"
+                      >
+                        <span>{isLoading ? contactPage.form.submittingButton : contactPage.form.submitButton}</span>
+                        {!isLoading && (
+                          <span className="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300">
+                            →
+                          </span>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                )}
+
+                {/* WhatsApp Alternative */}
+                <div className="mt-8 pt-6 border-t border-charcoal/10 text-center">
+                  <p className="text-xs text-taupe font-light mb-2">
+                    {contactPage.whatsappAlternative.question}
+                  </p>
+                  <a
+                    href={social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center text-xs tracking-wider uppercase font-medium text-charcoal hover:text-champagne-dark transition-colors py-1 min-h-[44px]"
+                  >
+                    <span>{contactPage.whatsappAlternative.linkText}</span>
+                    <span className="ml-1.5 transform group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
 
         {/* 3. FAQ Section */}
         <div className="py-20 sm:py-28">
-          <div className="max-w-2xl mb-12 sm:mb-16">
-            <div className="flex items-center space-x-3 mb-3">
-              <span className="w-6 h-[1px] bg-champagne" />
-              <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium">
-                {contactPage.faq.eyebrow}
-              </span>
+          <ScrollReveal>
+            <div className="max-w-2xl mb-12 sm:mb-16">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="w-6 h-[1px] bg-champagne" />
+                <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-champagne-dark font-medium">
+                  {contactPage.faq.eyebrow}
+                </span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal mb-3">
+                {contactPage.faq.heading}
+              </h2>
+              <p className="text-taupe text-sm font-light">
+                {contactPage.faq.subtitle}
+              </p>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal mb-3">
-              {contactPage.faq.heading}
-            </h2>
-            <p className="text-taupe text-sm font-light">
-              {contactPage.faq.subtitle}
-            </p>
-          </div>
+          </ScrollReveal>
 
           <div className="max-w-3xl divide-y divide-charcoal/10 border-y border-charcoal/10">
-            {contactPage.faq.items.map((item) => {
+            {contactPage.faq.items.map((item, idx) => {
               const isOpen = activeFaq === item.id;
 
               return (
-                <div key={item.id} className="py-6">
-                  <button
-                    type="button"
-                    onClick={() => toggleFaq(item.id)}
-                    className="w-full flex items-center justify-between text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne group min-h-[44px]"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-serif text-xl sm:text-2xl text-charcoal group-hover:text-champagne-dark transition-colors pr-6">
-                      {item.question}
-                    </span>
-                    <span className="text-xl font-light text-champagne-dark shrink-0">
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
+                <ScrollReveal key={item.id} delay={idx * 60}>
+                  <div className="py-6">
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(item.id)}
+                      className="w-full flex items-center justify-between text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne group min-h-[44px]"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-serif text-xl sm:text-2xl text-charcoal group-hover:text-champagne-dark transition-colors pr-6">
+                        {item.question}
+                      </span>
+                      <span className="text-xl font-light text-champagne-dark shrink-0 transition-transform duration-300">
+                        {isOpen ? "−" : "+"}
+                      </span>
+                    </button>
 
-                  {isOpen && (
-                    <div className="pt-4 pr-12 text-taupe text-sm sm:text-base font-light leading-relaxed animate-fade-in">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
+                    {isOpen && (
+                      <div className="pt-4 pr-12 text-taupe text-sm sm:text-base font-light leading-relaxed animate-fade-in">
+                        {item.answer}
+                      </div>
+                    )}
+                  </div>
+                </ScrollReveal>
               );
             })}
           </div>

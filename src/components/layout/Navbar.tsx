@@ -32,7 +32,7 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-charcoal/10 transition-colors duration-300">
+    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-charcoal/10 transition-colors duration-300 anim-navbar-fade">
       <Container>
         <div className="flex items-center justify-between h-[72px] sm:h-20">
           {/* Sol: Brand & Profession */}
@@ -45,7 +45,7 @@ export default function Navbar() {
               Mehin İsmayılova
             </span>
             <span className="text-[10px] tracking-widest uppercase text-taupe font-normal -mt-0.5">
-              Diksiya & Nitq Müəlliməsi
+              Diksiya &amp; Nitq Müəlliməsi
             </span>
           </Link>
 
@@ -58,16 +58,13 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-xs tracking-editorial uppercase transition-colors duration-300 py-1 relative ${
+                    className={`text-xs tracking-editorial uppercase transition-colors duration-300 py-1 nav-link-underline ${
                       isActive
-                        ? "text-charcoal font-medium"
+                        ? "text-charcoal font-medium active"
                         : "text-taupe hover:text-charcoal"
                     }`}
                   >
                     {item.label}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-champagne" />
-                    )}
                   </Link>
                 );
               })}
@@ -75,14 +72,16 @@ export default function Navbar() {
 
             <Link
               href="/elaqe"
-              className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-5 py-2.5 rounded-[2px] hover:bg-charcoal-light hover:text-champagne-light transition-all duration-300 border border-charcoal hover:border-champagne/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne"
+              className="inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory px-5 py-2.5 rounded-[2px] hover:bg-champagne hover:text-charcoal hover:border-champagne transition-all duration-400 border border-charcoal focus:outline-none focus-visible:ring-1 focus-visible:ring-champagne group"
             >
               <span>Dərsə müraciət</span>
-              <span className="ml-1.5 text-xs">→</span>
+              <span className="ml-1.5 text-xs transform group-hover:translate-x-1 transition-transform duration-300">
+                →
+              </span>
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button (min 44px touch target) */}
+          {/* Mobile Hamburger Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -92,17 +91,17 @@ export default function Navbar() {
           >
             <div className="w-6 h-4 flex flex-col justify-between items-end">
               <span
-                className={`h-[1.5px] bg-charcoal transition-all duration-300 ${
+                className={`h-[1.5px] bg-charcoal transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   mobileMenuOpen ? "w-6 rotate-45 translate-y-[7px]" : "w-6"
                 }`}
               />
               <span
-                className={`h-[1.5px] bg-charcoal transition-all duration-300 ${
+                className={`h-[1.5px] bg-charcoal transition-opacity duration-200 ${
                   mobileMenuOpen ? "opacity-0" : "w-4"
                 }`}
               />
               <span
-                className={`h-[1.5px] bg-charcoal transition-all duration-300 ${
+                className={`h-[1.5px] bg-charcoal transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   mobileMenuOpen ? "w-6 -rotate-45 -translate-y-[7px]" : "w-6"
                 }`}
               />
@@ -110,18 +109,21 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Full-Width Ivory Menu */}
+        {/* Mobile Full-Width Ivory Menu with Staggered Items */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-charcoal/10 bg-ivory py-6 animate-fade-in">
-            <nav className="flex flex-col space-y-4" aria-label="Mobil naviqasiya">
-              {siteContent.navigation.map((item) => {
+            <nav className="flex flex-col space-y-3" aria-label="Mobil naviqasiya">
+              {siteContent.navigation.map((item, idx) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-xs tracking-widest uppercase py-2.5 transition-colors duration-200 flex items-center justify-between ${
+                    style={{
+                      animationDelay: `${idx * 50}ms`,
+                    }}
+                    className={`text-xs tracking-widest uppercase py-2.5 transition-colors duration-200 flex items-center justify-between anim-hero-eyebrow ${
                       isActive ? "text-charcoal font-semibold" : "text-taupe"
                     }`}
                   >
@@ -130,11 +132,16 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-4">
+              <div
+                style={{
+                  animationDelay: `${siteContent.navigation.length * 50}ms`,
+                }}
+                className="pt-4 anim-hero-eyebrow"
+              >
                 <Link
                   href="/elaqe"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-3.5 rounded-[2px] hover:bg-charcoal-light transition-colors"
+                  className="w-full inline-flex items-center justify-center text-xs tracking-widest uppercase font-medium bg-charcoal text-ivory py-3.5 rounded-[2px] hover:bg-champagne hover:text-charcoal transition-colors duration-300"
                 >
                   <span>Dərsə müraciət</span>
                   <span className="ml-1.5">→</span>
