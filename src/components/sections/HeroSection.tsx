@@ -65,7 +65,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Sağ Tərəf: Real Portret (~55%) */}
+          {/* Sağ Tərəf: Əsas Portret Fotosu (~55%) */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end anim-monogram-entrance">
             <div className="relative w-full max-w-lg lg:max-w-none group">
               {/* Arxa Fonda Çox İncə #B59668 Ambient Glow */}
@@ -80,7 +80,7 @@ export default function HeroSection() {
                     fill
                     priority
                     unoptimized
-                    className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+                    className="object-cover object-[center_top] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
                     onError={() => setImageError(true)}
                   />
                 ) : (

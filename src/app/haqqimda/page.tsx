@@ -48,7 +48,7 @@ export default function AboutPage() {
                   fill
                   priority
                   unoptimized
-                  className="object-cover object-center"
+                  className="object-cover object-[78%_20%]"
                 />
               </div>
               <div className="p-6 bg-ivory-secondary/40 rounded-[2px] border border-charcoal/10">

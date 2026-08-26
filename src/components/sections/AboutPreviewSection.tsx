@@ -16,7 +16,7 @@ export default function AboutPreviewSection() {
       <Container>
         {/* Desktop: Asymmetric 40/60 Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Sol Tərəf: Mehin Tək Foto (~40%) */}
+          {/* Sol Tərəf: Mehin Tədris Fotosu (~40%) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start">
             <ScrollReveal delay={0} className="w-full max-w-md lg:max-w-none">
               <div className="relative w-full group">
@@ -31,7 +31,7 @@ export default function AboutPreviewSection() {
                       alt={aboutPreview.imageAlt}
                       fill
                       unoptimized
-                      className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+                      className="object-cover object-[78%_20%] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
                       onError={() => setImageError(true)}
                     />
                   ) : (
